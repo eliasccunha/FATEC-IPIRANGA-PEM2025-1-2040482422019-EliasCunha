@@ -1,5 +1,7 @@
 #include<stdio.h>
 
+//
+
 typedef struct{
     char nome[50];
     float nota;
