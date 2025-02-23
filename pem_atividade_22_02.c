@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-//
+// @author Elias Cesario da Cunha
+// Atividade Classificação Top 15 aluno de medicina
 
 typedef struct{
     char nome[50];
@@ -74,7 +75,7 @@ printf("Informe o numero total de candidatos: ");
         
         
         for(l = 0; l < 10; l++){
-            printf("Insira a nota de Prova Pratica numero %d : ", l + 1);
+            printf("Insira a nota de Prova Pratica numero %d: ", l + 1);
             scanf("%f", &temp);
             if(temp > maior){
                 maior = temp;
@@ -88,7 +89,7 @@ printf("Informe o numero total de candidatos: ");
         menor = 10.0, maior = 0.0;
         
         for(m = 0; m < 3; m++){
-            printf("Insira a nota de Entrevista em Banca Avaliadora numero %d : ", m + 1);
+            printf("Insira a nota de Entrevista em Banca Avaliadora numero %d: ", m + 1);
             scanf("%f", &temp);
             if(temp > maior){
                 maior = temp;
