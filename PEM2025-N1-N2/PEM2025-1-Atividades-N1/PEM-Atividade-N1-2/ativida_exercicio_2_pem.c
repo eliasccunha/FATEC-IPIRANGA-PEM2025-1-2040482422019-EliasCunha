@@ -19,7 +19,7 @@ int main()
     int i, j;
     int confirmar = 1;
     int acao;
-
+    int quantidade_de_item;
     int quantidadades[30];
 
     for (int i = 0; i < 30; i++)
@@ -79,6 +79,10 @@ int main()
                     printf("Informe o codigo do produto de ate 4 caracteres: ");
                     scanf("%s", estoque[i][j]);
                     printf("item %s sera armazenado na RUA %c Gondola %d \n",estoque[i][j] ,rua, j +1);
+                    printf("Quantos items serao armazenados :");
+                    scanf("%d", &quantidade_de_item);
+                    quantidadades[j] += quantidade_de_item;
+                    printf("%d adicionados ao estoque\n", quantidade_de_item);
                 }
                 else
                 {
@@ -124,9 +128,19 @@ int main()
                     scanf("%d", &confirmar);
                     if (confirmar == 1)
                     {
-                        printf("pedido de retirada confirmado!\n");
+                        printf("quantos itens serao retirados: ");
+                        scanf("%d", &quantidade_de_item);
+                        if((quantidadades[j] - quantidade_de_item) < 0)
+                        {
+                            printf("Items em estoque insuficiente , total de itens %s = %d\n", estoque[i][j] , quantidadades[j]);
+                        }
+                        else{
+                            quantidadades[j] -=quantidade_de_item;
+                            printf("pedido de retirada %d , %s confirmado!\n", quantidade_de_item, estoque[i][j]);
+                            printf("item %s em estoque %d \n",estoque[i][j], quantidadades[j]);
+
+                        }
                         
-                        printf("\n");
                     }
                     else
                     {
@@ -150,7 +164,7 @@ int main()
                         if (strcmp(estoque[i][j], "") == 0) {
                             printf("Gondola %d: vazia\n", j + 1);
                         } else {
-                            printf("Gondola %d: Código %s\n", j + 1, estoque[i][j]);
+                            printf("Gondola %d: Codigo %s: Quantidades[%d]\n", j + 1, estoque[i][j], quantidadades[j]);
                         }
                     }
                 }
