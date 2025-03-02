@@ -21,6 +21,7 @@ int main()
     int acao;
     int quantidade_de_item;
     int quantidadades[30];
+    char codigo[5];
 
     for (int i = 0; i < 30; i++)
     {
@@ -87,7 +88,16 @@ int main()
                 else
                 {
                     printf("ja tem o item %s armazenado neste local\n", estoque[i][j]);
-                    printf("\n");
+                    printf("deseja adicionar mais quantidas?\n");
+                    printf("(1) para sim  ou (2) para nao?\n");
+                    scanf("%d", &confirmar);
+
+                    if(confirmar == 1){
+                        printf("informar a quantidade de items:");
+                        scanf("%d", &quantidade_de_item);
+                        quantidadades[j] += quantidade_de_item;
+                        printf(" %d items adicionas\n", quantidade_de_item);
+                    }
                 }
                    
 
